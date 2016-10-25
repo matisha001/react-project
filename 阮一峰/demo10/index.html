@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var Hello = React.createClass({
+        getInitialState: function () {
+          return {
+            color:'red'
+          };
+        },
+        componentDidMount: function () {
+          this.timer = setTimeout(function () {
+            var color = this.state.color;
+            this.setState({
+              color:'blue'
+            });
+          }.bind(this), 1000);
+        },
+
+        render: function () {
+          return (
+            <div style={{background: this.state.color}}>
+              Hello {this.props.name}
+            </div>
+          );
+        }
+      });
+
+      ReactDOM.render(
+        <Hello name="world"/>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

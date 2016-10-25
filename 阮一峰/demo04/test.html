@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var Matisha = React.createClass({
+        render: function() {
+          return <div><h1 className="json" htmlFor="65789">
+            matisha's son is {this.props.class}
+          </h1>
+            some text
+          </div>;
+        }
+      });
+
+      ReactDOM.render(
+        <Matisha son="John" class="json" />,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>
